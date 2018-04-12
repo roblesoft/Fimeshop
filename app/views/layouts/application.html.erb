@@ -8,38 +8,55 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+	<nav class="navbar navbar-expand-lg navbar-light">
 		<a class="navbar-brand md-0 h1" href="#">FIME</a>
 		<div class="collapse navbar-collapse nav-right">
 			<ul class="navbar-nav mr-auto">
-				<li class="navbar-item active ">
-					<a class="nav-link" href="">Nuevo <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="navbar-item active ">
-					<a class="nav-link" href="">Desktop <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="navbar-item active ">
-					<a class="nav-link" href="">Accesorios <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="navbar-item active ">
-					<a class="nav-link" href="">Gorras <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="navbar-item active ">
-					<a class="nav-link" href="">Termos <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="navbar-item active ">
-					<a class="nav-link" href="">Otros <span class="sr-only">(current)</span></a>
-				</li>
+				<div class="col-md-3">
+					<li class="navbar-item active ">
+						<a class="nav-link" href="">Nuevo <span class="sr-only">(current)</span></a>
+					</li>
+				</div>
+				<div class="col-md-3">
+					<li class="navbar-item active ">
+						<a class="nav-link" href="">Desktop <span class="sr-only">(current)</span></a>
+					</li>
+				</div>
+				<div class="col-md-3">
+					<li class="navbar-item active ">
+						<a class="nav-link" href="">Vestimenta <span class="sr-only">(current)</span></a>
+					</li>
+				</div>
+				<div class="col-md-3">
+					<li class="navbar-item active ">
+						<a class="nav-link" href="">Accesorios <span class="sr-only">(current)</span></a>
+					</li>
+					</div>
+				<div class="col-md-3">
+					<li class="navbar-item active ">
+						<a class="nav-link" href="">Termos <span class="sr-only">(current)</span></a>
+					</li>
+				</div>
+				<div class="col-md-3">
+					<li class="navbar-item active ">
+						<a class="nav-link" href="">Otros <span class="sr-only">(current)</span></a>
+					</li>
+				</div>
 
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Products
+          User
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					  <a class="dropdown-item" href="#">cloutes</a>
-					  <a class="dropdown-item" href="#">watches</a>
-					  <div class="dropdown-divider"></div>
-					  <a class="dropdown-item" href="#">others</a>
+					  <% if user_signed_in? %>
+						<%= link_to 'Publicar', new_product_path, class: 'dropdown-item' %>
+						<%= link_to 'lista', products_path, class: 'dropdown-item' %>
+						<div class="dropdown-divider"></div>
+						<%= link_to 'Salir', destroy_user_session_path , method: "delete", class: 'dropdown-item' %>
+					  <% else %>
+						  <%= link_to 'sign in', user_session_path, class:"dropdown-item" %>
+						  <%= link_to 'sign up', new_user_registration_path, class:"dropdown-item" %>
+					  <% end %>
 					</div>
 				</li>
 			</ul>

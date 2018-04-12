@@ -1,0 +1,23 @@
+<%= form_for @product  do |f| %>
+	<%= f.label :name %> <br>
+	<%= f.text_field :name %>
+	<br>
+	<%= f.label :description %><br>
+	<%= f.text_field :description %>
+	<br>
+	<%= f.label :price %><br>
+	<%= f.number_field :price %>
+	<br>
+	<%= f.label :available %><br>
+	<%= f.check_box :available %>
+	<br>
+	<p>categoria</p><br>
+	<%= f.label :desktop %>
+	<%= f.check_box :desktop %>
+	<%= f.select :accessories do %>
+		<% [[true, 1], [false, 2]].each do |c| -%>
+			<%= content_tag(:option, c.first, value: c.last) %>
+		<% end %>
+	<% end %>
+	<%= f.submit %>
+<% end %>
