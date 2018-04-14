@@ -19,27 +19,27 @@
 				</div>
 				<div class="col-md-3">
 					<li class="navbar-item active ">
-						<a class="nav-link" href="">Desktop <span class="sr-only">(current)</span></a>
+						<%= link_to 'Desktop', {controller:  :home, action: :desktop}, class: 'nav-link' %>
 					</li>
 				</div>
 				<div class="col-md-3">
 					<li class="navbar-item active ">
-						<a class="nav-link" href="">Vestimenta <span class="sr-only">(current)</span></a>
+						<%= link_to 'Vestimenta', {controller: :home, action: :vestimenta}, class: 'nav-link' %>
 					</li>
 				</div>
 				<div class="col-md-3">
 					<li class="navbar-item active ">
-						<a class="nav-link" href="">Accesorios <span class="sr-only">(current)</span></a>
+						<%= link_to 'Accesorios', {controller: :home, action: :accesorios}, class: 'nav-link' %>
 					</li>
 					</div>
 				<div class="col-md-3">
 					<li class="navbar-item active ">
-						<a class="nav-link" href="">Termos <span class="sr-only">(current)</span></a>
+						<%= link_to 'Termos', {controller: :home, action: :termos}, class: 'nav-link' %>
 					</li>
 				</div>
 				<div class="col-md-3">
 					<li class="navbar-item active ">
-						<a class="nav-link" href="">Otros <span class="sr-only">(current)</span></a>
+						<%= link_to 'Otros', {controller: :home, action: :otros}, class: 'nav-link' %>
 					</li>
 				</div>
 
