@@ -19,27 +19,27 @@
 				</div>
 				<div class="col-md-3">
 					<li class="navbar-item active ">
-						<%= link_to 'Desktop', {controller:  :home, action: :desktop}, class: 'nav-link' %>
+						<%= link_to 'Desktop', {controller:  '/home', action: :desktop}, method: :get, class: 'nav-link' %>
 					</li>
 				</div>
 				<div class="col-md-3">
 					<li class="navbar-item active ">
-						<%= link_to 'Vestimenta', {controller: :home, action: :vestimenta}, class: 'nav-link' %>
+						<%= link_to 'Vestimenta', {controller: '/home', action: :vestimenta}, class: 'nav-link' %>
 					</li>
 				</div>
 				<div class="col-md-3">
 					<li class="navbar-item active ">
-						<%= link_to 'Accesorios', {controller: :home, action: :accesorios}, class: 'nav-link' %>
+						<%= link_to 'Accesorios', {controller: '/home', action: :accesorios}, class: 'nav-link' %>
 					</li>
 					</div>
 				<div class="col-md-3">
 					<li class="navbar-item active ">
-						<%= link_to 'Termos', {controller: :home, action: :termos}, class: 'nav-link' %>
+						<%= link_to 'Termos', {controller: '/home', action: :termos}, class: 'nav-link' %>
 					</li>
 				</div>
 				<div class="col-md-3">
 					<li class="navbar-item active ">
-						<%= link_to 'Otros', {controller: :home, action: :otros}, class: 'nav-link' %>
+						<%= link_to 'Otros', {controller: '/home', action: :otros}, class: 'nav-link' %>
 					</li>
 				</div>
 
@@ -52,9 +52,9 @@
 						<%= link_to 'Publicar', new_product_path, class: 'dropdown-item' %>
 						<%= link_to 'lista', products_path, class: 'dropdown-item' %>
 						<div class="dropdown-divider"></div>
-						<%= link_to 'Salir', destroy_user_session_path , method: "delete", class: 'dropdown-item' %>
+						<%= link_to 'Salir', destroy_user_session_path , method: :delete , class: 'dropdown-item' %>
 					  <% else %>
-						  <%= link_to 'sign in', user_session_path, class:"dropdown-item" %>
+						  <%= link_to 'sign in', new_user_session_path, class:"dropdown-item" %>
 						  <%= link_to 'sign up', new_user_registration_path, class:"dropdown-item" %>
 					  <% end %>
 					</div>
