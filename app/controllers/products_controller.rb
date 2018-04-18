@@ -1,9 +1,18 @@
 class ProductsController < ApplicationController
 
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
+	before_action :admin, only: [:edit]
 
 	def new
-		@product = Product.new
+		if user_signed_in?
+			if current_user.roll	
+				@product = Product.new
+			else 
+				redirect_to root_path
+			end
+			else
+				redirect_to root_path
+		end
 	end
 
 	def create
@@ -23,17 +32,32 @@ class ProductsController < ApplicationController
 	end
 
 	def update
-		@product.update product_params
-		redirect_to @product
+		if current_user.roll
+			@product.update product_params
+			redirect_to @product
+		else
+			redirect_to root_path
+		end
 	end
 
 	def destroy
-		@product.destroy
-		redirect_to products_path
+		if current_user.roll
+			@product.destroy
+			redirect_to products_path
+		else
+			redirect_to root_path
+		end
 	end
 
 	def index
-		@products = Product.all
+		if user_signed_in?
+			if current_user.roll
+				@products = Product.all
+			else
+				redirect_to root_path
+			end
+		else redirect_to root_path
+		end
 	end
 
 	private 
@@ -43,5 +67,16 @@ class ProductsController < ApplicationController
 
 	def set_product
 		@product = Product.find params[:id]
+	end
+
+	def admin
+		if user_signed_in?
+			if current_user.roll
+				self.edit
+			else
+				redirect_to root_path
+			end
+		else redirect_to root_path
+		end
 	end
 end

@@ -48,11 +48,13 @@
           User
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					  <% if user_signed_in? %>
+					  <% if user_signed_in? && current_user.roll == true %>
 						<%= link_to 'Publicar', new_product_path, class: 'dropdown-item' %>
 						<%= link_to 'lista', products_path, class: 'dropdown-item' %>
 						<div class="dropdown-divider"></div>
 						<%= link_to 'Salir', destroy_user_session_path , method: :delete , class: 'dropdown-item' %>
+					  <% elsif user_signed_in? %>
+						  <%= link_to 'Salir', destroy_user_session_path , method: :delete , class: 'dropdown-item' %>
 					  <% else %>
 						  <%= link_to 'sign in', new_user_session_path, class:"dropdown-item" %>
 						  <%= link_to 'sign up', new_user_registration_path, class:"dropdown-item" %>
