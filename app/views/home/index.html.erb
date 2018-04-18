@@ -3,3 +3,9 @@
 <div class="row">
 	<h1 class="display-1">FIMESHOP</h1>
 </div>
+<div class="row">
+	<% if user_signed_in? %>
+		<h2 class="display-2">Bienvenido <%= current_user.name %></h2><br>
+	<% end %>
+
+</div>

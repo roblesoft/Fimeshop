@@ -2,6 +2,33 @@
 <div class="row justify-content-center">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+  <div class="field">
+    <%= f.label :Nombre , for: 'inlineFormCustomSelect' %><br />
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Matricula , for: 'inlineFormCustomSelect' %><br />
+    <%= f.number_field :matricula, class: 'form-control' %>
+  </div>
+<br>
+
+	<div class="field">
+		<div class="col" >
+		<%= f.label :Carrera %>
+		<%= f.select :carrera, class: 'custom-select ' do %>
+			<% [['Ingeniero Mecánico Electricista', 'Ingeniero Mecánico Electricista'], ['Ingeniero Mecánico Electricista', 'Ingeniero Mecánico Electricista'], ['Ingeniero Administrador de Sistemas', 'Ingeniero Administrador de Sistemas'], ['Ingeniero en Electrónica y Comunicaciones', 'Ingeniero en Electriónica y Comunicaciones'], ['Ingeniero en Electrónica y Automatización', 'Ingeniero en Electrónica y Automatización'], [ 'Ingeniero en Materiales' ,  'Ingeniero en Materiales' ], [ 'Ingeniero en Manofactura' ,  'Ingeniero en Manofactura' ], [ 'Ingeniero en Mecatrónica' ,  'Ingeniero en Mecatrónica' ], [ 'Ingeniero en Aeronáutica' ,  'Ingeniero eb Aeronáutica' ], [ 'Ingeniero en Tecnología de Software' ,  'Ingeniero en Tecnología de Softare' ], [ 'Ingeniero Biomedico' , 'Ingeniero Biomedico']].each do |c| -%>
+				<%= content_tag(:option, c.first, value: c.last) %>
+			<% end %>
+		<% end %>
+		</div>
+
+  <div class="field">
+    <%= f.label :Egreso , for: 'inlineFormCustomSelect' %><br />
+    <%= f.number_field :anoegreso, class: 'form-control' %>
+  </div>
+
+
 
   <div class="field">
     <%= f.label :email , for: 'inlineFormCustomSelect' %><br />
@@ -23,7 +50,7 @@
   <br>
   
   <div class="actions row justify-content-center">
-    <%= f.submit "Sign up", class: 'btn btn-primary' %>
+    <%= f.submit "Sign up", class: 'btn btn-success' %>
   </div>
 <% end %>
 </div>
