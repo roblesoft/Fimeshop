@@ -19,8 +19,10 @@ class PictureUploader < CarrierWave::Uploader::Base
      ActionController::Base.helpers.asset_path('default.png')
   
 	  #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
-     end
-
+   end
+   def cache_dir
+	"#{Rails.root}/tmp/uploads"
+   end
   # Process files as they are uploaded:
   # process scale: [200, 300]
   #
