@@ -20,6 +20,9 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'execjs'
+gem 'therubyracer', :platforms => :ruby
+
 gem 'carrierwave', '~>1.2','>=1.2.2'
 gem 'mini_magick', '~>4.5','>=4.5.1'
 gem 'devise', git: 'git://github.com/plataformatec/devise.git'
