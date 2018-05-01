@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
 	before_action :admin, only: [:edit]
 
+
 	def new
 		if user_signed_in?
 			if current_user.roll	
