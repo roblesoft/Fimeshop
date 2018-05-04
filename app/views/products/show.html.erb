@@ -1,7 +1,26 @@
-<h1 class="display-1">Producto</h1>
-<figcaption class="figure_caption"><%= image_tag @product.picture.thumb.url, class: ' figure-img img-fluid rounded'%></figcaption>
-<%= @product.name %><br>
-<%= @product.description%><br>
-<%= @product.price %><br>
-<%= @product.available %><br>
-<%= @product.category %><br>
+<div class="row justify-content-end">
+	<div class="col-md-6"><h1 class="display-1"><%= @product.name %></h1></div>
+</div>
+<div class="row">
+	<div class="col-md-6"><figcaption class="figure_caption"><%= image_tag @product.picture.thumb.url, class: ' figure-img img-fluid rounded'%></figcaption></div>
+	<div class="col-md-6">
+		<div class="card text-white bg-success">
+			  <div class="card-body">
+					<h5 class="display-5">Descripcion:</h5>
+					<p class="lead"><%= @product.description%></p>
+					<h5 class="display-5">Precio:</h5>
+					<p class="lead" >$<%= @product.price %></p>
+					<h5 class="display-5">Displonible:</h5>
+					<% if @product.available %>
+						<p class="lead">si</p>
+					<% else %>
+						<p class="lead">no</p>
+					<% end %>
+					<h5 class="display-5">Categoria:</h5>
+					<p class="lead"><%= @product.category %></p>
+					<button type="button" class="btn btn-light">separar</button>
+																						<button type="button" class="btn btn-light">Agregar al carrito</button>
+			 </div>
+		</div>
+	</div>
+</div>

@@ -44,7 +44,7 @@ class ProductsController < ApplicationController
 	def destroy
 		if current_user.roll
 			@product.destroy
-			redirect_to products_path
+			redirect_to root_path
 		else
 			redirect_to root_path
 		end
