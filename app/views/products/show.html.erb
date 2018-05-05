@@ -10,16 +10,15 @@
 					<p class="lead"><%= @product.description%></p>
 					<h5 class="display-5">Precio:</h5>
 					<p class="lead" >$<%= @product.price %></p>
-					<h5 class="display-5">Displonible:</h5>
 					<% if @product.available %>
-						<p class="lead">si</p>
+						<h5 class="display-5">Disponible</h5>
 					<% else %>
-						<p class="lead">no</p>
+						<h5 class="display-5">No disponible</h5>
 					<% end %>
 					<h5 class="display-5">Categoria:</h5>
 					<p class="lead"><%= @product.category %></p>
 					<button type="button" class="btn btn-light">separar</button>
-																						<button type="button" class="btn btn-light">Agregar al carrito</button>
+					<button type="button" class="btn btn-light">Agregar al carrito</button>
 			 </div>
 		</div>
 	</div>
