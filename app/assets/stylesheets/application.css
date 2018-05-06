@@ -17,5 +17,9 @@
 	-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow:0px 0px 20px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+	transform: translate(0px, 2px);
+	-webkit-tranform: translate(0px, 2px);
+	-moz-tranform: translate(0px, 2px);
+	-ms-tranform: translate(0px, 2px);
 }
 

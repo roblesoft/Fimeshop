@@ -7,6 +7,10 @@ class ProductsController < ApplicationController
 	def new
 		if user_signed_in?
 			if current_user.roll	
+				respond_to do |format|
+					format.html
+					format.js
+				end
 				@product = Product.new
 			else 
 				redirect_to root_path
@@ -22,8 +26,7 @@ class ProductsController < ApplicationController
           if @product.save
 			return redirect_to @product
           end
-
-		  render :new
+			redirect_to products_path
 	end
 
 	def show
@@ -35,7 +38,7 @@ class ProductsController < ApplicationController
 	def update
 		if current_user.roll
 			@product.update product_params
-			redirect_to @product
+			redirect_to products_path
 		else
 			redirect_to root_path
 		end
