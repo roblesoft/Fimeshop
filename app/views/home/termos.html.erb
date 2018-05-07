@@ -2,28 +2,7 @@
 <div class="card-columns">
 <% @products.each do |product| %>
 	<%  if product.category == 'termos' %>
-<% if product.available %>
-			<div class="card text-white border-success md-3 card-transform" style="width: 21rem">
-				<%= image_tag product.picture.medium.url, class: 'card-img-top'%>
-				<div class="card-header"><h3 class="card-title"><%= link_to product.name, product,remote: true,  class:"text-success" %></h3></div>
-				<div class="card-body">	
-						<p class="card-text text-primary lead ">$<%= product.price %></p>
-						<p class="card-text text-success lead"><%= product.description %></p>
-				</div>
-				<div class="card-footer text-right"><div class="btn-group btn-group-toggle"><button class="btn btn-success">Separar</button></div></div>  
-			</div>
-		<% else %>
-			<div class="card text-white border-danger md-3 card-transform" style="width: 21rem">
-				<%= image_tag product.picture.medium.url, class: 'card-img-top'%>
-				<div class="card-header"><h3 class="card-title"><%= link_to product.name, product,remote: true,  class:"text-danger" %></h3></div>
-				<div class="card-body">	
-						<p class="card-text text-primary lead ">$<%= product.price %></p>
-						<p class="card-text text-danger lead"><%= product.description %></p>
-				</div>
-				<div class="card-footer text-right"><div class="btn-group btn-group-toggle"><button class="btn btn-success" disabled>Separar</button><</div></div>  
-			</div>
-		<% end %>
-
+		<%= render "card", product: product %>
 	<% end %>
 <% end %>
 </div>

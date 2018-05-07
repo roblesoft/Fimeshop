@@ -1,0 +1,23 @@
+<% if product.available %>
+	<div class="card text-white border-success md-3 card-transform" style="width: 21rem">
+		<%= link_to product, remote: true do %>
+			<%= image_tag product.picture.thumb.url, class: 'card-img-top'%>
+		<% end%>
+		<div class="card-body">	
+			<h3 class="card-title text-success"><%= product.name %></h3>
+			<p class="card-text text-primary lead ">$<%= product.price %></p>
+		</div>
+		<div class="card-footer text-right"><div class="btn-group btn-group-toggle"><button class="btn btn-success">Separar</button></div></div>  
+	</div>
+<% else %>
+	<div class="card text-white border-danger md-3 card-transform" style="width: 21rem">
+		<%= link_to product, remote: true do %>
+			<%= image_tag product.picture.medium.url, class: 'card-img-top'%>
+		<% end %>
+		<div class="card-body">	
+			<h3 class="card-title text-success"><%= product.name %></h3>
+			<p class="card-text text-primary lead ">$<%= product.price %></p>
+		</div>
+		<div class="card-footer text-right"><div class="btn-group btn-group-toggle"><button class="btn btn-success">Separar</button></div></div>  
+	</div>
+<% end %>
