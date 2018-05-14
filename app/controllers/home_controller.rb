@@ -4,6 +4,10 @@ class HomeController < ApplicationController
 	def index
 	end
 
+	def nuevo
+		@products = Product.order(id: :desc)
+	end
+
 	def desktop
 	end
 

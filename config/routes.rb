@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'accesorios', to: 'home#accesorios'
   get 'termos', to: 'home#termos'
   get 'otros', to: 'home#otros'
+  get 'nuevo', to: 'home#nuevo'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

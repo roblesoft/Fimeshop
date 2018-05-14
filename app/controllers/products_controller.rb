@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
        @product = current_user.products.new product_params
 
           if @product.save
-			return redirect_to @product
+			return redirect_to ""
           end
 			redirect_to products_path
 	end

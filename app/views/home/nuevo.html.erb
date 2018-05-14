@@ -1,0 +1,6 @@
+<h1 class="display-1">Productos</h1>
+<div class="card-columns">
+	<% @products.each do |product| %>
+		<%= render "card", product: product %>
+	<% end %>
+</div>
