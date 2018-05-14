@@ -23,3 +23,28 @@
 	-ms-tranform: translate(0px, 2px);
 }
 
+
+.back {
+	height: 10%;
+	width: 10%;
+	background: green;
+	z-index: 0;
+}
+
+
+.nav-c{
+	margin-top: 0.5%;
+}
+
+.fondo{
+	background: url("fondo.png") no-repeat
+}
+
+.footer-style{
+	background:#239b56; 
+	width: 100%;
+	height: 390px;
+	margin-top: 5%;
+	padding: 50px 110px;
+}
+

@@ -6,9 +6,11 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body style="background:'Sin nombre.png'">
-	<nav class="navbar navbar-expand-lg navbar-light">
-		<a class="navbar-brand md-0 h1" href="#"><%= image_tag 'oso2.png' %></a>
+  <body class="fondo">
+	<nav class="navbar nav-c navbar-expand-lg navbar-light">
+		<%= link_to root_path do %>
+			<%= image_tag 'oso2.png', class:"navbar-brand md-0 h1"  %>
+		<% end %>
 		<div class="collapse navbar-collapse nav-right">
 			<ul class="navbar-nav mr-auto">
 				<div class="col-md-2">
@@ -66,5 +68,50 @@
 	<div class="container">
 		<%= yield %>
 	</div>
+		<footer class="footer-style">
+			<div class="row" >
+				<div class="col-md-3"><%= image_tag 'logofime.png' %></div>
+				<div class="col-md-3">
+					<ul class="nav flex-column">
+						<li class="nav-item" >
+							<h3 >Productos</h3>
+						</li>
+						<li>
+							<%= link_to 'Desktop', {controller:  '/home', action: :desktop}, method: :get, class: 'nav-link lead text-dark' %>
+						</li>
+						<li class="nav-item">
+							<%= link_to 'Vestimenta', {controller: '/home', action: :vestimenta}, class: 'nav-link lead text-dark' %>
+						</li>
+						<li class="nav-item">
+							<%= link_to 'Accesorios', {controller: '/home', action: :accesorios}, class: 'nav-link lead text-dark' %>
+						</li>
+						<li class="nav-item">
+							<%= link_to 'Termos', {controller: '/home', action: :termos}, class: 'nav-link lead text-dark' %>
+						</li>
+						<li class="nav-item">
+							<%= link_to 'Otros', {controller: '/home', action: :otros}, class: 'nav-link lead text-dark' %>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-3">
+				<ul class="nav flex-column">
+					<li class="nav-item">
+						<h3>Produccion</h3>
+					</li>
+					<li class="nav-item lead">Uriel Eduardo Robles Nava</li>
+					<li class="nav-item lead">Arturo Treviño</li>
+					<li class="nav-item lead">Brandon</li>
+					<li class="nav-item lead">Luis</li>
+					<li class="nav-item lead">Luis</li>
+					<li class="nav-item lead">Sebastian Niño</li>
+				</ul>
+				</div>
+				<div class="col-md-3"><%= image_tag 'logo.png' %></div>
+			</div>
+			<div class="row justify-content-center">
+				<p class="lead">Programacion Orientada a Objetos</p>
+			</div>
+		</footer>
+
   </body>
 </html>
