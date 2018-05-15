@@ -1,11 +1,54 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<div class="row">
-	<h1 class="display-1">FIMESHOP</h1>
+<%= image_tag 'root.png', style: "margin-top: -10%; margin-left: -20%; z-index: -1; position: relative; display: inline-block" %>
+<div class="row" style= "margin-top: -540px; margin-bottom: 600px; position: absolute">
+	<h1 class="display-1">FIMESTOCK</h1>
 </div>
-<div class="row">
+<div class="row" style= " margin-top: -440px; margin-bottom: 600px; position: absolute">
 	<% if user_signed_in? %>
 		<h2 class="display-2">Bienvenido <%= current_user.name %></h2><br>
 	<% end %>
+</div>
+<div class="row justify-content-center" style="margin-top: 5% ; margin-bottom: 5%">
+	<h1 class="display-1">Objetivo</h1>
+	<p class="lead"> Este proyecto será dirigido principalmente para los egresados de la Facultad de Ingeniería Mecánica y Eléctrica, llamados “ExaFimes”, para poder facilitarles la información de los productos de su Alma Máter y con esto darles un sentimiento de identidad y orgullo por la institución.</p>
+	<p class="lead">FimeStock se caracterisa por presentar el catalogo de productos de la tienda oficial de FIME y dar sus detalles para dar mas informacion al usuario de la que esta comprando</p>
 
+
+
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<%= image_tag 'oso.jpg' , style:"margin-left: -44%"%>
+	</div>
+	<div class="col-md-6" style="padding: 60px 100px">
+		<h3 class="display-3">Creación</h3>
+		<p class="lead">FimeStock es una página llamada así en honor a las siglas de la Facultad de Ingeniería Mecánica y Eléctrica (FIME) y la palabra “stock” representa a los artículos almacenados dentro de la tienda en la Facultad.</p>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-md-6 justify-content-center" style="padding: 110px 40px 10px 0px">
+		<h3 class="display-3">Proposito</h3>
+	<p class="lead">
+
+Hay muchos egresados de la Facultad que están interesados en adquirir artículos relacionados con su alma mater, pero no tienen forma de saber cuáles son estos y si hay en existencia.
+
+
+Teniendo en cuenta la problemática que se tiene se busca facilitar el acceso a los productos que se encuentran en la tienda de artículos de FIME.
+
+	</p>
+	</div>
+	<div class="col-md-6">
+	<%= image_tag 'FIME_UANL.jpg' %>
+	</div>
+</div>
+<div class="row justify-content-center" style="margin: 0% -10.7% 5% -11%; padding: 70px; background: green">
+	<h2 class="display-2">Nuevos Productos</h2>
+</div>
+<div class="row">
+	<% for i in 0...6 %>
+		<div style="margin: 10px; display: grid">
+			<%= render "card", product: @products[i] %>
+		</div>
+	<% end %>
 </div>

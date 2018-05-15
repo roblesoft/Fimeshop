@@ -2,6 +2,7 @@ class HomeController < ApplicationController
 	before_action :select_products, only: [:desktop, :vestimenta, :accesorios, :termos, :otros]
 
 	def index
+		@products = Product.order(id: :desc)
 	end
 
 	def nuevo
