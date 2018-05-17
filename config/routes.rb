@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
 
-  resources :products
-  get 'desktop' , to: 'home#desktop'
+  resources :products do
+	resources :comments
+  end
+  get 'desktop' , to: 'home#desktop' do 
+	resources :comments
+end
   get 'vestimenta', to: 'home#vestimenta'
   get 'accesorios', to: 'home#accesorios'
   get 'termos', to: 'home#termos'
