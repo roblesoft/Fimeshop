@@ -3,11 +3,9 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :products do
-	resources :comments
+	resources :comments , only: [:create, :destroy, :update ]
   end
-  get 'desktop' , to: 'home#desktop' do 
-	resources :comments
-end
+  get 'desktop', to: 'home#desktop'
   get 'vestimenta', to: 'home#vestimenta'
   get 'accesorios', to: 'home#accesorios'
   get 'termos', to: 'home#termos'
