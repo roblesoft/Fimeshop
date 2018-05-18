@@ -44,7 +44,7 @@
 								 </div>
 							     <div class="d-flex w-100 justify-content-between">
 									 <p class="lead"><%= comment.body %></p>
-									 <% if comment.user == current_user || current_user.roll %>
+									 <% if comment.user == current_user %>
 									 <%= link_to product_comment_path( @product, comment), method: :delete  do %>
 										 <button class="close" aria-label="close"><span aria-hidden="true">&times;</span></button>
 									 <%end%>
