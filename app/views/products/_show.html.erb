@@ -40,14 +40,16 @@
 							<li class="list-group-item flex-column aling-items-start">
 								 <div class="d-flex w-100 justify-content-between">
 									 <h5><%= comment.user.name %></h5>
-									 <small class="text-muted"><%= comment.created_at %></small>
+									 <small class="text-muted"><%= comment.created_at.strftime("%d/%B/%Y") %></small>
 								 </div>
 							     <div class="d-flex w-100 justify-content-between">
 									 <p class="lead"><%= comment.body %></p>
-									 <% if comment.user == current_user %>
-									 <%= link_to product_comment_path( @product, comment), method: :delete  do %>
-										 <button class="close" aria-label="close"><span aria-hidden="true">&times;</span></button>
-									 <%end%>
+									 <% if user_signed_in? %>
+										 <% if comment.user == current_user || current_user.roll %>
+										 <%= link_to product_comment_path( @product, comment), method: :delete  do %>
+											 <button class="close" aria-label="close"><span aria-hidden="true">&times;</span></button>
+										 <%end%>
+										 <% end %>
 									 <% end %>
 								</div>
 							</li>
