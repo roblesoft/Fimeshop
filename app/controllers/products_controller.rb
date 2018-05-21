@@ -47,8 +47,11 @@ class ProductsController < ApplicationController
 
 	def destroy
 		if current_user.roll
+			@product.comments.each do|comment| 
+				comment.destroy
+			end
 			@product.destroy
-			redirect_to :back
+			redirect_to ""
 		else
 			redirect_to root_path
 		end
