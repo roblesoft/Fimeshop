@@ -8,13 +8,13 @@
 </div>
 <div class="card-body ">
 <%= form_for @product, class: 'form-group'  do |f| %>
-	<%= f.label :name , for: 'inlineFormCustomSelect'%> <br>
+	<%= f.label :Nombre , for: 'inlineFormCustomSelect'%> <br>
 	<%= f.text_field :name , placeholder: 'Producto'  , class: 'form-control' %>
 	<br>
-	<%= f.label :description , for: 'inlineFormCustomSelect'%><br>
+	<%= f.label :Descripcion , for: 'inlineFormCustomSelect'%><br>
 	<%= f.text_area :description, placeholder: 'Descripcion' , class: 'form-control'%>
 	<br>
-	<%= f.label :price, for: 'inlineFormCustomSelect' %><br>
+	<%= f.label :Precio, for: 'inlineFormCustomSelect' %><br>
 	<div class="input-group">
 		<div class="input-group-prepend"> <div class="input-group-text">$</div></div>
 		<%= f.number_field :price, placeholder: '00.00' , class: 'form-control'%>
@@ -22,7 +22,7 @@
 	<br>
 	<div class="custom-file mr-sm-2">
 		<%= f.file_field :picture, class: 'custom-file-input ', id: 'customFile' %>
-		<%= f.label :picture, class: ' custom-file-label', for: 'customFile' %>
+		<%= f.label :Foto, class: ' custom-file-label', for: 'customFile' %>
 	</div>
 	<br>
 	<br>
@@ -30,7 +30,7 @@
 		<div class="col" >
 		<%= f.label :Categoria %>
 		<%= f.select :category, class: 'custom-select ' do %>
-			<% [['desktop', 'desktop'], ['vestimenta', 'vestimenta'], ['accesorios', 'accesorios'], ['termos', 'termos'], ['otros', 'otros']].each do |c| -%>
+			<% [['Desktop', 'desktop'], ['Vestimenta', 'vestimenta'], ['Accesorios', 'accesorios'], ['Termos', 'termos'], ['Otros', 'otros']].each do |c| -%>
 				<%= content_tag(:option, c.first, value: c.last) %>
 			<% end %>
 		<% end %>
