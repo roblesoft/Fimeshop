@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :products do
 	resources :comments , only: [:create, :destroy, :update ]
+		  resources :reservations
   end
   get 'desktop', to: 'home#desktop'
   get 'vestimenta', to: 'home#vestimenta'
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   get 'termos', to: 'home#termos'
   get 'otros', to: 'home#otros'
   get 'nuevo', to: 'home#nuevo'
+  get 'reservaciones', to: 'home#reservaciones'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

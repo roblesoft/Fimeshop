@@ -1,0 +1,18 @@
+<h1 class="display-1">Productos apartados</h1>
+<ul class="list-group list-group-flush">
+<% @reservations.each do |reservation| %>
+	<li class="list-group-item flex-column aling-items-start">
+		 <div class="d-flex w-100 justify-content-between">
+			 <h5><%= reservation.user.name %></h5>
+			 <small class="text-muted"><%= reservation.created_at.strftime("%d/%B/%Y") %></small>
+		 </div>
+	     <div class="d-flex w-100 justify-content-between">
+			 <p class="lead"><%= reservation.product.name %></p>
+				 <%= link_to product_reservation_path( reservation.product, reservation), method: :delete  do %>
+					 <button class="close" aria-label="close"><span aria-hidden="true">&times;</span></button>
+				 <%end%>
+		</div>
+	</li>
+<% end %>
+</ul>
+

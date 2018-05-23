@@ -31,6 +31,7 @@ class ProductsController < ApplicationController
 
 	def show
 		@comment = Comment.new
+		@reservation = Reservation.new
 	end
 
 	def edit
@@ -61,12 +62,14 @@ class ProductsController < ApplicationController
 		if user_signed_in?
 			if current_user.roll
 				@products = Product.all
+				@reservations = Reservation.all
 			else
 				redirect_to root_path
 			end
 		else redirect_to root_path
 		end
 	end
+
 
 	private 
 	def product_params

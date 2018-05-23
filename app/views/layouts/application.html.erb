@@ -50,6 +50,8 @@
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					  <% if user_signed_in? && current_user.roll == true %>
+						<%= link_to 'Reservaciones', {controller: '/home', action: :reservaciones}, class: 'dropdown-item' %>
+						<div class="dropdown-divider"></div>
 						<%= link_to "nuevo", new_product_path, remote: true, class:"dropdown-item" %>
 						<%= link_to 'lista', products_path, class: 'dropdown-item' %>
 						<div class="dropdown-divider"></div>
